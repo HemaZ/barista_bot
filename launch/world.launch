@@ -10,7 +10,7 @@
   <arg name="yaw" default="0"/>
 
   <!-- World File -->
-  <arg name="world_file" default="$(find my_robot)/worlds/cafe.world"/>
+  <arg name="world_file" default="$(find barista_bot)/worlds/cafe.world"/>
 
   <!-- Launch Gazebo World -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
@@ -20,10 +20,10 @@
     <arg name="world_name" value="$(arg world_file)"/>
   </include>
 
-  <include file="$(find my_robot)/launch/robot_description.launch" />
+  <include file="$(find barista_bot)/launch/robot_description.launch" />
 
   <!-- Spawn My Robot -->
-  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-urdf -param robot_description -model my_robot 
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-urdf -param robot_description -model barista_bot 
               -x $(arg x) -y $(arg y) -z $(arg z)
               -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)"/>
 
