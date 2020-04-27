@@ -13,14 +13,14 @@
   <joint name="BaristaII__link_0_JOINT_0" type="fixed">
     <parent link="chassis"/>
     <child link="front_caster"/>
-    <origin rpy="0      -0.00014 -0.00024" xyz="0.19008 -0.04502 -0.00021"/>
+    <origin rpy="0      -0.00014 -0.00024" xyz="2.0004e-01  0 6.0000e-05"/>
     <axis xyz="0 0 0"/>
     <limit effort="0" lower="0" upper="0" velocity="0"/>
   </joint>
   <joint name="BaristaII__link_0_JOINT_1_0" type="fixed">
     <parent link="chassis"/>
     <child link="back_caster"/>
-    <origin rpy="0      -0.00029 -0.00049" xyz="-2.0004e-01  0.0000e-05 -6.0000e-05"/>
+    <origin rpy="0      -0.00029 -0.00049" xyz="-2.0004e-01  0 -6.0000e-05"/>
     <axis xyz="0 0 0"/>
     <limit effort="0" lower="0" upper="0" velocity="0"/>
   </joint>
@@ -96,13 +96,13 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <sphere radius="0.04"/>
+        <sphere radius="0.049"/>
       </geometry>
     </collision>
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <sphere radius="0.04"/>
+        <sphere radius="0.049"/>
       </geometry>
     </visual>
   </link>
@@ -134,13 +134,13 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <sphere radius="0.04"/>
+        <sphere radius="0.049"/>
       </geometry>
     </collision>
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <sphere radius="0.04"/>
+        <sphere radius="0.049"/>
       </geometry>
     </visual>
   </link>

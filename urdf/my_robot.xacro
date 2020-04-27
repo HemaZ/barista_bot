@@ -19,7 +19,7 @@
     <material>Gazebo/Gray</material>
   </gazebo>
 
-  <xacro:include filename="$(find my_robot)/urdf/my_robot.gazebo" />
+  <xacro:include filename="$(find barista_bot)/urdf/my_robot.gazebo" />
 
   <link name="robot_footprint"></link>
 
@@ -196,7 +196,7 @@
     <visual>
       <origin xyz="0  0  0" rpy=" 0  0  0"/>
       <geometry>
-        <mesh filename="package://my_robot/meshes/hokuyo.dae" />
+        <mesh filename="package://barista_bot/meshes/hokuyo.dae" />
       </geometry>
     </visual>
   </link>
