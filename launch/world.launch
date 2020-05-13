@@ -10,7 +10,7 @@
   <arg name="yaw" default="0"/>
 
   <!-- World File -->
-  <arg name="world_file" default="$(find barista_bot)/worlds/cafe.world"/>
+  <arg name="world_file" default="$(find barista_bot)/worlds/cafeball.world"/>
 
   <!-- Launch Gazebo World -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
@@ -21,6 +21,8 @@
   </include>
 
   <include file="$(find barista_bot)/launch/robot_description.launch" />
+
+
 
   <!-- Spawn My Robot -->
   <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-urdf -param robot_description -model barista_bot 

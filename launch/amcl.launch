@@ -1,0 +1,40 @@
+<launch>
+    <!-- TODO: Add nodes here -->
+    <arg name="map_file" default="$(find barista_bot)/maps/map.yaml"/>
+    <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+
+    <!-- AMCL Node -->
+    <node name="amcl" pkg="amcl" type="amcl" output="screen">
+        <param name="odom_frame_id" value="odom"/>
+        <param name="odom_model_type" value="diff-corrected"/>
+        <param name="base_frame_id" value="chassis"/>
+        <param name="global_frame_id" value="map"/>
+        <param name="initial_pose_x" value="0"/>
+        <param name="initial_pose_y" value="0"/>
+
+
+        <param name="min_particles" value="1000"/>
+        <param name="max_particles" value="10000"/>
+
+        <!-- <param name="laser_model_type" value="likelihood_field"/>
+        <param name="laser_z_hit" value="0.97"/>
+        <param name="laser_z_rand" value="0.03"/> -->
+
+        <param name="odom_model_type" value="diff-corrected"/>
+        <param name="odom_alpha1" value="0.05"/>
+        <param name="odom_alpha2" value="0.05"/>
+        <param name="odom_alpha3" value="0.05"/>
+        <param name="odom_alpha4" value="0.05"/>
+    </node>
+
+    <!-- Move Base -->
+    <node name="move_base" pkg="move_base" type="move_base" respawn="false" output="screen">
+        <rosparam file="$(find barista_bot)/config/costmap_common_params.yaml" command="load" ns="global_costmap" />
+        <rosparam file="$(find barista_bot)/config/costmap_common_params.yaml" command="load" ns="local_costmap" />
+        <rosparam file="$(find barista_bot)/config/local_costmap_params.yaml" command="load" />
+        <rosparam file="$(find barista_bot)/config/global_costmap_params.yaml" command="load" />
+        <rosparam file="$(find barista_bot)/config/base_local_planner_params.yaml" command="load" />
+        <param name="base_global_planner" value="navfn/NavfnROS" />
+        <param name="base_local_planner" value="base_local_planner/TrajectoryPlannerROS"/>
+    </node>
+</launch>
