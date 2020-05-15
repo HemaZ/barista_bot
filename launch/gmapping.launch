@@ -1,0 +1,9 @@
+<launch>
+
+    <!-- Gmapping Node -->
+    <node name="slam_gmapping" pkg="gmapping" type="slam_gmapping" output="screen">
+        <param name="base_frame" value="chassis"/>
+    </node>
+    <node name="teleop_twist_keyboard.py" pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" output="screen" />
+
+</launch>
